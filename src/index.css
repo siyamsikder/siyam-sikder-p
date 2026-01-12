@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-navy text-slate antialiased leading-relaxed overflow-x-hidden;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-light-navy/70 backdrop-blur-md border border-lightest-navy shadow-lg;
+  }
+}
