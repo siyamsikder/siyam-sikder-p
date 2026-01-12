@@ -1,0 +1,32 @@
+export const projects = [
+    {
+        id: 1,
+        title: 'PetNest',
+        description: 'A modern web platform where users can adopt pets and buy/sell pet products. Features include authentication, role-based access, and responsive UI.',
+        tech: ['React', 'Tailwind CSS', 'Node.js', 'MongoDB'],
+        github: 'https://github.com/siyamsikder',
+        live: 'https://petnest-example.com',
+        image: '/assets/images/projects/petnest.png',
+        featured: true,
+    },
+    {
+        id: 2,
+        title: 'Blood Bond',
+        description: 'A platform that connects blood donors with recipients quickly and efficiently. Includes donor search, request system, and admin dashboard.',
+        tech: ['MERN Stack', 'Redux', 'JWT'],
+        github: 'https://github.com/siyamsikder',
+        live: 'https://bloodbond-example.com',
+        image: '/assets/images/projects/blood-bond.png',
+        featured: true,
+    },
+    {
+        id: 3,
+        title: 'Restaurant Website',
+        description: 'A responsive restaurant website with product listing, cart UI, and order flow. Designed for high performance and smooth user experience.',
+        tech: ['React', 'Tailwind CSS', 'Firebase'],
+        github: 'https://github.com/siyamsikder',
+        live: 'https://restaurant-example.com',
+        image: '/assets/images/projects/restaurant.png',
+        featured: false,
+    },
+];
