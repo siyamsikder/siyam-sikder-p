@@ -1,9 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-import { FiMenu, FiX } from 'react-icons/fi';
+import { FiMenu, FiX, FiLogOut } from 'react-icons/fi';
 import { motion, AnimatePresence } from 'framer-motion';
 import Container from '../common/Container';
 import Button from '../common/Button';
+import { AuthContext } from '../../provider/AuthProvider';
 
 const navLinks = [
     { name: 'Home', path: '/' },
@@ -17,6 +18,7 @@ const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const location = useLocation();
+    const { user, logOut } = useContext(AuthContext);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -30,6 +32,12 @@ const Navbar = () => {
     useEffect(() => {
         setIsOpen(false);
     }, [location]);
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.log(error))
+    }
 
     return (
         <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-navy/90 backdrop-blur-sm shadow-xl' : 'bg-transparent'}`}>
@@ -53,9 +61,17 @@ const Navbar = () => {
                                 <span className="text-green mr-1">.</span>{link.name}
                             </NavLink>
                         ))}
-                        <a href="/resume/siyam-resume.pdf" target="_blank" rel="noopener noreferrer">
-                            <Button variant="outline" className="px-4 py-2 text-sm">Resume</Button>
-                        </a>
+
+                        {user ? (
+                            <Button onClick={handleLogOut} variant="outline" className="px-4 py-2 text-sm flex items-center">
+                                <FiLogOut className="mr-2" /> Logout
+                            </Button>
+                        ) : (
+                            <NavLink to="/login">
+                                <Button variant="outline" className="px-4 py-2 text-sm">Login</Button>
+                            </NavLink>
+                        )}
+
                     </div>
 
                     {/* Mobile Menu Button */}

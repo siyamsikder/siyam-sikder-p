@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { FiExternalLink } from 'react-icons/fi';
 
 const BlogCard = ({ blog, index }) => {
@@ -37,9 +38,11 @@ const BlogCard = ({ blog, index }) => {
 
                 <div className="text-white mb-4">{`}`}</div>
 
-                <a href={blog.link} className="flex items-center text-green hover:underline mt-4">
-                    Read Post <FiExternalLink className="ml-2" />
-                </a>
+                <div className="flex justify-between items-center mt-4">
+                    <Link to={`/blog/${blog.id}`} className="flex items-center text-green hover:underline">
+                        Read Post <FiExternalLink className="ml-2" />
+                    </Link>
+                </div>
             </div>
         </motion.div>
     );

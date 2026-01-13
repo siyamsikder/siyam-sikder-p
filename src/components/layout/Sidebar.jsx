@@ -28,11 +28,11 @@ const Sidebar = () => {
                 <div className="w-full space-y-4 text-left">
                     <div className="flex items-center space-x-3 text-slate">
                         <FiMail className="text-green text-xl" />
-                        <span className="text-sm">your-email@example.com</span>
+                        <span className="text-sm">siyam0sikder.com</span>
                     </div>
                     <div className="flex items-center space-x-3 text-slate">
                         <FiPhone className="text-green text-xl" />
-                        <span className="text-sm">+880-XXXXXXXXXX</span>
+                        <span className="text-sm">+8801343913493</span>
                     </div>
                     <div className="flex items-center space-x-3 text-slate">
                         <FiMapPin className="text-green text-xl" />

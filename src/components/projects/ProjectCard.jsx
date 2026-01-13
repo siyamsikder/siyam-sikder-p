@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { FiGithub, FiExternalLink, FiFolder } from 'react-icons/fi';
 
 const ProjectCard = ({ project, index }) => {
@@ -43,10 +44,16 @@ const ProjectCard = ({ project, index }) => {
                     <p className="text-slate mb-4 text-sm line-clamp-3">{project.description}</p>
                 </div>
 
-                <div className="flex flex-wrap gap-2 mt-4 text-xs font-mono text-slate">
+                <div className="flex flex-wrap gap-2 mt-4 text-xs font-mono text-slate mb-4">
                     {project.tech.map((tech) => (
                         <span key={tech} className="mr-2 mb-2">{tech}</span>
                     ))}
+                </div>
+
+                <div className="mt-auto">
+                    <Link to={`/projects/${project.id}`} className="text-green text-sm hover:underline flex items-center gap-1">
+                        View Project <FiExternalLink size={14} />
+                    </Link>
                 </div>
             </div>
         </motion.div>

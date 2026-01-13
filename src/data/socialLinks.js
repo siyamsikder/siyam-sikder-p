@@ -8,7 +8,7 @@ export const socialLinks = [
     },
     {
         name: 'LinkedIn',
-        url: 'https://linkedin.com/in/siyamsikder', // Placeholder
+        url: 'https://linkedin.com/in/siyamsikder', 
         icon: FiLinkedin,
     },
     {
